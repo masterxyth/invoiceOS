@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Basic Form</title>
+
+	<link rel="stylesheet" href="assets/demo.css">
+	<link rel="stylesheet" href="assets/form-basic.css">
+
+
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}" />
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/form-basic.css') }}" />
+</head>
+<body>
+
+	<header>
+		<h1>Create a new Indent</h1>
+    </header>
+
+    <div class="main-content">
+
+        <!-- You only need this form and the form-basic.css -->
+
+        <form class="form-basic" method="post" action="/send">
+
+            <div class="form-title-row">
+                <h1>Indent Detail</h1>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Indent Number</span>
+                    <input type="text" name="indent-id" placeholder="Enter the Indent ID">
+                </label>
+            </div>
+
+    <div class="form-title-row">
+                <h1>Buyer Information</h1>
+            </div>
+
+             <div class="form-row">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="buyer-name" placeholder="Name of Buyer">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Address 1</span>
+                    <input type="text" name="buyer-address1" placeholder="Buyer's Address">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Address 2</span>
+                    <input type="text" name="buyer-address2" placeholder="Buyers Address Cont">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>City</span>
+                    <input type="text" name="buyer-city" placeholder="City of Buyer">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Country</span>
+                    <input type="text" name="buyer-country" placeholder="Country of Buyer">
+                </label>
+            </div>
+
+
+            <div class="form-title-row">
+                <h1>Seller Information</h1>
+            </div>
+
+             <div class="form-row">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="seller-name" placeholder="Seller's Name">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Address 1</span>
+                    <input type="text" name="seller-address1" placeholder="Seller's Address">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Address 2</span>
+                    <input type="text" name="seller-address2" placeholder="Seller's Address Cont">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>City</span>
+                    <input type="text" name="seller-city" placeholder="Seller's City">
+                </label>
+            </div>
+
+                <div class="form-row">
+                <label>
+                    <span>Country</span>
+                    <input type="text" name="seller-country" placeholder="Seller's Country">
+                </label>
+            </div>
+
+             <div class="form-title-row">
+                <h1>Items Traded</h1>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Product Name</span>
+                    <input type="text" name="product-name" placeholder="Name of Item Sold">
+                </label>
+            </div>
+
+
+               <div class="form-row">
+                <label>
+                    <span>Quantity</span>
+                    <input type="text" name="qty" placeholder="0">
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <label>
+                    <span>Unit</span>
+                    <select name="qtype">
+                        <option selected distabled>Choose Here</option>
+                        <option>Metric Tons</option>
+                        <option>KG</option>
+                    </select>
+                </label>
+            </div>
+
+                 <div class="form-row">
+                <label>
+                    <span>Price</span>
+                    <input type="text" name="rate" placeholder="0">
+                </label>
+            </div>
+
+               <div class="form-row">
+                <label>
+                    <span>Packaging</span>
+                    <input type="text" name="pkg" placeholder="Packaging of Product">
+                </label>
+            </div>
+
+               <div class="form-row">
+                <label>
+                    <span>Origin</span>
+                    <input type="text" name="origin" placeholder="Product Origin">
+                </label>
+            </div>
+
+
+                     <div class="form-row">
+                <label>
+                    <span>Load</span>
+                    <select name="container-type">
+                        <option selected disabled>Choose Here</option>
+                        <option>20FT LCL</option>
+                        <option>20FT FCL</option>
+                        <option>40FT LCL</option>
+                        <option>40FT FCL</option>
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="form-title-row">
+                <h1>Terms</h1>
+            </div>
+
+
+             <div class="form-row">
+                <label>
+                    <span>Payment Type</span>
+                    <select name="payment-term">
+                        <option selected disabled>Choose Here</option>
+                        <option>LC At Sight</option>
+                        <option>LC 90 Days</option>
+                        <option>Bank Contract</option>
+                        <option>Bank Contract 90 Days</option>
+                    </select>
+                </label>
+            </div>
+
+              <div class="form-row">
+                <label>
+                    <span>Shipment Port</span>
+                    <input type="text" name="ship-port" placeholder="Port of Shipment">
+                </label>
+            </div>
+
+              <div class="form-row">
+                <label>
+                    <span>Contract Negotiated In</span>
+                    <input type="text" name="nego-city" placeholder="Negotiation Country/City">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Bank Routing Details</span>
+                    <input type="text" name="route-detail" placeholder="Bank Routing Detail">
+                </label>
+            </div>
+
+                 <div class="form-row">
+                <label>
+                    <span>Days at Port</span>
+                    <input type="text" name="port-days" placeholder="Days at Port">
+                </label>
+            </div>
+
+               <div class="form-row">
+                <label>
+                    <span>Insurance Covered By</span>
+                    <select name="insurance">
+                        <option selected disabled>Choose Here</option>
+                        <option>Buyer</option>
+                        <option>Seller</option>
+                        <option>None</option>
+                    </select>
+                </label>
+            </div>
+
+
+            <div class="form-row">
+                <button type="submit">Submit Form</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+body {
+    background-color: #ffffff;
+}
+
+.indent {
+    border-style: solid;
+    position:absolute;
+    width: 800px;
+}
+
+#company-title {
+    font-family: Gotham;
+    font-weight: bold;
+    color: #000000;
+    font-size: 150%;
+    display: inline;
+
+}
+
+#invoice {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-style: bold;
+    color: #000000;
+    float:right;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 14%;
+    height: 3%;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    font-size: 150%;
+    display: inline;
+}
+
+#indenter-address1, #indenter-address2 {
+    margin-left: 40px;
+    opacity: 0.5;
+    font-family: Helvetica;
+    letter-spacing: -0.2px;
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+.indenter-info {
+    list-style: none;
+    margin-left: 325px;
+    margin-top: -55px;
+    opacity: 0.5;
+    font-family: Helvetica;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1.25em;
+    border-left: 2px solid grey;
+}
+
+.indenter-info-det {
+    list-style: none;
+    margin-left: 375px;
+    margin-top: -55px;
+    opacity: 0.5;
+    font-family: Helvetica;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1.25em;
+}
+
+.indent-meta {
+    font-family: Montserrat;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    list-style: none;
+    font-size: 14px;
+    float:right;
+    margin-top: -60px;
+    margin-right: 120px;
+}
+
+.indent-meta-det {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    list-style: none;
+    float:right;
+    font-size: 12px;
+    margin-top: -60px;
+    margin-right: 10px;
+    line-height: 1.5;
+}
+
+.buyer-seller-header {
+    list-style: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+.buyer-seller-header li {
+    display: inline;
+}
+
+#seller {
+    display: inline;
+    opacity: 0.5;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    float:right;
+    margin-left: 10%;
+    margin-right: 35%;
+}
+
+#buyer {
+    display: inline;
+    opacity: 0.5;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: -40px;
+}
+
+.buyer-name {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 5%;
+}
+
+.buyer-address
+{
+    list-style: none;
+    opacity: 0.7;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.seller-name {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 57%;
+    margin-top: -125px
+}
+
+.seller-address
+{
+    list-style: none;
+    margin-left: 52%;
+    opacity: 0.7;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+
+.line-items {
+    background-color: #f3f3f3;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    padding-top: 2px
+}
+
+#line-headers {
+    margin-left: -20px;
+}
+
+#line-headers li {
+    list-style: none;
+    display:inline;
+    width: 21.5px;
+    height: 5px;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin: 30px 90px 15px 15px;
+
+}
+
+
+
+.li-section {
+    padding-top: 10px;
+    opacity: 0.7;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: -15px
+}
+
+.li-section li {
+    display: inline;
+}
+
+#qty {
+    margin-left: 10px
+}
+
+#descript {
+    margin-left: 140px;
+    display: block;
+    margin-top: -20px;
+}
+
+#cf-price {
+    margin-left: 160px;
+    display: block;
+    margin-top: -20px
+
+
+}
+
+#cf-total {
+
+    margin-left: 300px;
+    display: block;
+    margin-top: -20px
+}
+
+#term-heading {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 30px;
+}
+
+#terms-list li {
+    opacity: 0.7;
+    font-family: Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.shipment-info {
+    background-color: #f3f3f3;
+    margin-top: 20px;
+    padding-left: 20px;
+
+}
+
+#shipment-headings {
+    list-style: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.5;
+    letter-spacing: normal;
+    color: #000000;
+    margin-top: -10px;
+    margin-left: -30px;
+    font-size: 14px;
+}
+#shipment-content {
+
+    list-style: none;
+    font-family: Helvetica;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.5;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 200px;
+    margin-top: -190px;
+    font-size: 14px;
+}
+
+#footer-heading {
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 35px;
+
+}
+.footer p {
+    opacity: 0.7;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 35px;
+    padding-bottom: 80px;
+}
+
+#stamp {
+    width: 160px;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin-left: 35px;
+    border-bottom: 1px solid black;
+ }
+
+#for-company {
+    width: 200px;
+    float: right;
+    margin-top: -30px;
+    opacity: 0.5;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+.line-header-class {
+
+    /* Add shit here */
+}

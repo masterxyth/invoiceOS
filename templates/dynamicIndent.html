@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <!-- Flask Stylesheet -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indent.css') }}" />
+
+    <!-- HTML Stylesheet -->
+
+     <link rel="stylesheet" href="css/indent.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+
+    <title>New Indent</title>
+    </head>
+
+    <div class="indent">
+
+
+    <header>
+        <ul class="page-titles">
+        <li id="company-title">PAKLAND CHEMICALS</li>
+        <li id="invoice">INVOICE</li>
+        </ul>
+
+        <p id="indenter-address1">CCI & E Regd. No. W-105299</p>
+        <p id="indenter-address2">4/11 arkay square ext shahrah-e-liaquat karachi</p>
+
+        <ul class="indenter-info">
+            <li>Tel:</li>
+            <li>Fax:</li>
+            <li>Email:</li>
+        </ul>
+        <ul class="indenter-info-det">
+        <li>0092 (21) 32420370 / 32425950</li>
+        <li>0092 (21) 32417397 / 32423249</li>
+        <li>info@paklandchemicals.com</li>
+        </ul>
+
+        <ul class="indent-meta">
+        <li>INDENT NO:</li>
+        <li>DATE:</li>
+        </ul>
+
+        <ul class="indent-meta-det">
+        <li>{{ indentid }}</li>
+        <li id='date'></li>
+        </ul>
+    </header>
+
+
+        <div class="buyer-seller">
+            <ul class="buyer-seller-header">
+                <li id="buyer">BUYER</li>
+                <li id="seller">SELLER</li>
+            </ul>
+        <h4 class="buyer-name">{{ BuyerName }}</h4>
+
+        <ul class="buyer-address">
+            <li>{{ BuyerAddress1 }}</li>
+            <li>{{ BuyerAddress2 }}</li>
+            <li>{{ BuyerCity }}</li>
+            <li>{{ BuyerCountry}}</li>
+            </ul>
+
+        <h4 class="seller-name">{{ SellerName }}</h4>
+            <ul class="seller-address">
+            <li>{{ SellerAddress1 }}</li>
+            <li>{{ SellerAddress2 }}</li>
+            <li>{{ SellerCity }}</li>
+            <li>{{ SellerCountry }} </li>
+            </ul>
+
+        </div>
+
+
+        <div class="line-items">
+            <ul id="line-headers">
+            <li class="line-header-class">Quantity</li>
+            <li class="line-header-class">Products Sold</li>
+            <li class="line-header-class">Price</li>
+            <li class="line-header-class">Total</li>
+            </ul>
+
+
+            <div class="line-item-content">
+            <ul class="li-section">
+                <li id="qty">{{ qty }} {{ qtype }}</li>
+                <li id="descript"><ul><li>{{ ProductName }}</li>
+
+                <li id="cf-price">
+                    <ul>
+
+                    <li>${{ rate  }}</li>
+
+                    </ul>
+                <li id="cf-total">
+                    <ul>
+                        <li>${{ total }}</li> <br>
+                    </ul>
+
+            </div>
+        </div>
+
+        <div class="terms">
+
+            <h4 id="term-heading">Terms of Contract</h4>
+        <ol id="terms-list">
+
+            <li>Payment terms irrevocable {{ PaymentTerm }} from b/lading date.</li>
+
+            <li>All packages must have full description with net + gross weight and country of origin.</li>
+
+            <li>Foreign bank charges on seller’s account</li>
+
+            <li>All spelling or typographical errors acceptable but not affecting any changes in nomenclature of the commodity name, quantity and value.</li>
+
+            <li>Set of documents shall be placed inside the door of container; in case of lcl shipment each pallet shall have such documents pertaining to goods.</li>
+
+            <li>I/C should be free for negotiation in {{ NegoCity }}</li>
+
+            <li>I/C to be routed via: {{ RouteDetail }}</li>
+
+            <li>Documents to be presented within {{ PortDays }} from date of shipment.</li>
+
+            <li>Third party bill of lading acceptable.</li>
+
+            <li>Shipment by {{ ContainerType }} only</li>
+
+            </ol>
+
+        </div>
+
+        <div class="shipment-info">
+
+            <ul id="shipment-headings">
+
+                <li>PACKING</li>
+                <li>ORIGIN</li>
+                <li>SHIPMENT PORT</li>
+                <li>SHIPMENT</li>
+                <li>INSURANCE</li>
+            </ul>
+
+            <ul id="shipment-content">
+            <li>{{ pkg }}</li><li>{{ origin }}</li>
+                <li>{{ ShipPort }}</li>
+                <li>With in 30 days after receipt of workable BC at sellers counter.</li>
+                <li>To be covered by the {{ insurance }}.</li>
+            </ul>
+
+        </div>
+
+        <div class="footer">
+
+            <h4 id="footer-heading">Terms & Conditions</h4>
+            <p>We the buyers authorize you to buy or instruct your Principals on our behalf, account & risk the whole or part thereof the goods as under-noted subject to following particulars. We agree usual terms and conditions of your Principal. We accept conditions overleaf</p>
+
+            <h5 id="stamp">Buyer's Stamp & Signature</h5>
+            <h5 id="for-company">FOR PAKLAND CHEMICALS</h5>
+        </div>
+
+
+    <script src="../static/js/script.js"></script>
+    <script src="script.js"></script>
+    </div>
+</html>
