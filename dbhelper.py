@@ -1,6 +1,6 @@
 import datetime
 
-import dbconfig
+import config
 
 import pymysql
 
@@ -8,7 +8,7 @@ import pymysql
 class DBHelper:
 
     def connect(self, database="indentify"):
-        return pymysql.connect(host='localhost', user=dbconfig.db_user, password=dbconfig.db_password, db=database, autocommit=True)
+        return pymysql.connect(host='localhost', user=config.db_user, password=config.db_password, db=database, autocommit=True)
 
     def create_user(self, email,salt, hashed):
         conn = self.connect()

@@ -1,7 +1,7 @@
 import pymysql
-import dbconfig
+import config
 
-connection = pymysql.connect(host='localhost', user=dbconfig.db_user, passwd=dbconfig.db_password)
+connection = pymysql.connect(host='localhost', user=config.db_user, passwd=config.db_password)
 
 try:
     with connection.cursor() as cursor:
