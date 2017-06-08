@@ -3,12 +3,11 @@ import datetime
 import config
 
 import pymysql
-
-
+connect = pymysql.connect(host='localhost', user='root', password='Mc$pacejam101', db='indentify', autocommit=True, cursorclass=pymysql.cursors.DictCursor)
 class DBHelper:
 
     def connect(self, database="indentify"):
-        return pymysql.connect(host='localhost', user=config.db_user, password=config.db_password, db=database, autocommit=True)
+        return pymysql.connect(host='localhost', user=config.db_user, password=config.db_password, db=database, autocommit=True, cursorclass=pymysql.cursors.DictCursor)
 
     def create_user(self, email,salt, hashed):
         conn = self.connect()
@@ -25,7 +24,7 @@ class DBHelper:
     def get_user(self, email):
         conn = self.connect()
         try:
-            query = "SELECT email FROM user WHERE email = %s;"
+            query = "SELECT * FROM user WHERE email = %s;"
             with conn.cursor() as cursor:
                 cursor.execute(query, email)
                 return cursor.fetchall()
