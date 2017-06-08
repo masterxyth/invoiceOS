@@ -29,7 +29,7 @@ cursor = conn.cursor()
 
 app = Flask(__name__)
 
-"""
+
 ## App Home
 @app.route('/')
 
@@ -76,7 +76,7 @@ def Authenticate():
      return "Username or Password is wrong"
     else:
      return "Logged in successfully"
-"""
+
 ## Form Sending Code
 
 @app.route('/send', methods=['GET', 'POST'])

@@ -70,7 +70,31 @@ def load_user(user_id):
 def account():
     return render_template('account.html')
 
+@app.route('/create_company')
+@login_required
+def create_company():
+    #Create company code here
+    return
 
+@app.route('/create_indent')
+@login_required
+def create_indent():
+    #Indent code here
+    return
+
+@app.route('/generate')
+@login_required
+def generate():
+    #Indent generation
+    return
+
+#Get Old Indent
+
+#Edit Indent w/Logs
+
+#Save Edits
+
+#Print Indent
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

@@ -14,3 +14,9 @@ class LoginForm(FlaskForm):
     email = EmailField('email', validators=[validators.DataRequired(), validators.Email()])
     password = PasswordField('password', validators=[validators.DataRequired(), validators.EqualTo('password', message='Password is required')])
     submit = SubmitField('submit',[validators.DataRequired()])
+
+#class CompanyForm(FlaskForm):
+    #Create Company Form here
+
+#class IndentForm(FlaskForm):
+    #Indent Form

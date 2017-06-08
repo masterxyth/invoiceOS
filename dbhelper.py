@@ -32,3 +32,20 @@ class DBHelper:
             print(e)
         finally:
             conn.close()
+
+    def create_company():
+        return
+    def get_company():
+        return
+
+    def update_company():
+        return
+
+    def create_indent():
+        return
+
+    def get_indent():
+        return
+
+    def update_indent():
+        return
