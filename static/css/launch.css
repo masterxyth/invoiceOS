@@ -1,0 +1,19 @@
+.card {
+  border: 1.75px solid gray;
+  border-radius: 10px;
+  padding-bottom: 2em;
+  padding-top: 2em;
+  margin-bottom: 2em;
+}
+
+.card-block {
+
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+.btn {
+  margin-top: 2em;
+  margin-left: 5em;
+  margin-right: 5em;
+}

@@ -53,7 +53,7 @@ def login():
         if stored_user and PH.validate_password(form.password.data, stored_user[0]['salt'], stored_user[0]['hashed']):
             user = User(form.email.data)
             login_user(user, remember=True)
-            return redirect(url_for('account'))
+            return redirect(url_for('launch'))
         form.email.errors.append('Email or password invalid')
     return render_template('home.html', loginform=form, registrationform=RegistrationForm())
 
@@ -65,10 +65,19 @@ def load_user(user_id):
         return User(user_id)
 
 
-@app.route('/account')
+@app.route('/launch')
 @login_required
-def account():
-    return render_template('account.html')
+def launch():
+    cname = 'Pakland Chemicals'
+    return render_template('launch.html')
+    #Update Company Information
+
+    # Create an Indent
+
+
+
+    #View Past Indents
+    return render_template('dash.html')
 
 @app.route('/create_company')
 @login_required
@@ -87,6 +96,7 @@ def create_indent():
 def generate():
     #Indent generation
     return
+
 
 #Get Old Indent
 

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block bodytag %}
+<link href="../static/css/launch.css" rel="stylesheet">
+<body>
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Launch Pad</h1>
+        <h4 id='sub-heading'><em>The Launch Pad for {% if cname %} {{cname}} {% else %} your Business {% endif %}</em></h4>
+    </div>
+  </div>
+
+
+<!-- Dashboard Buttons Container -->
+  <div class = 'container'>
+
+
+    <div class="col-md-4 ">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Create Indent</h4>
+          <h6 class="card-subtitle text-muted">Create a New Indent</h6>
+        </div>
+        <a href="#" class="btn btn-default">Create</a>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">Update Company Info</h4>
+          <h6 class="card-subtitle text-muted">Update Your Company Info</h6>
+        </div>
+        <a href="#" class="btn btn-default">Update</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">View Past Indents</h4>
+          <h6 class="card-subtitle text-muted">View Your Past Indents</h6>
+        </div>
+        <a href="#" class="btn btn-default">View</a>
+      </div>
+    </div>
+  </div>
+  </body>
+{% endblock %}
