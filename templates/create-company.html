@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block bodytag %}
+
+<body {% if onloadmessage %} onload="alert('{{onloadmessage}}');" {% endif %}>
+  <link href="../static/css/launch.css" rel="stylesheet">
+
+  {% endblock %}
+
+  {% block content %}
+  <div class="jumbotron">
+      <div class="container">
+          <h1>Update Company Information</h1>
+          <h4 id='sub-heading'><em>Update Information for {% if cname %} {{cname}} {% else %} your Business {% endif %}</em></h4>
+      </div>
+    </div>
+
+
+<div class='container'>
+  <div class='col-md-8'>
+
+
+
+<form class='navbar-form navbar-right form-inline' action='/create_company' method="POST">
+{% if companyform.errors %}
+<ul class="errors">
+  {% for field_name, field_errors in companyform.errors|dictsort if field_errors %}
+    {% for error in field_errors %}
+    <li>
+      {{ field_name }}: {{error }}
+    </li>
+    {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}
+  {{ companyform.csrf_token }}
+  <div class="form-group col-md-4">
+    <label>Company Name</label>
+    {{ companyform.company_name(class='form-control', placeholder="Company Name")}}
+  </div>
+  <div class="form-group col-md-4">
+    <label>Address Line 1</label>
+    {{ companyform.address1(class='form-control', placeholder="Address Line 1")}}
+  </div>
+  <div class="form-group col-md-4">
+    <label>Address Line 2</label>
+    {{ companyform.address2(class='form-control', placeholder="Address Line 2")}}
+  </div>
+  <div class="form-group col-md-4">
+    <label>Phone</label>
+    {{ companyform.phone(class='form-control', placeholder="Phone Number")}}
+  </div>
+  <div class="form-group col-md-4">
+    <label>Fax</label>
+    {{ companyform.fax(class='form-control', placeholder="Fax Number")}}
+  </div>
+  <div class="form-group col-md-4">
+    <label>Contact Email</label>
+    {{ companyform.email(class='form-control', placeholder="Contact Number")}}
+  </div>
+  <div class="form-group col-md-2">
+    {{ companyform.submit(class="btn btn-primary btn-block") }}
+  </div>
+</form>
+  </div>
+
+</div>
+
+{% endblock %}

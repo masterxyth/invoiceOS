@@ -9,9 +9,12 @@ from flask import url_for
 from flask_login import login_user
 from flask_login import LoginManager
 from flask_login import login_required
+from flask_login import current_user
 
 
 from dbhelper import DBHelper
+from forms import CompanyForm
+from forms import IndentForm
 from forms import LoginForm
 from forms import RegistrationForm
 from passwordhelper import PasswordHelper
@@ -25,12 +28,16 @@ app.secret_key = 'S/EgFas2Cfk/BPlHVTTpYZV4vH/qN3o4Zn/h0AKE57jyE9/3dtUJJqIBBGWZhq
 login_manager = LoginManager(app)
 login_manager.init_app(app)
 
+#rendering the homepage with the Registration From
 @app.route("/")
 def home():
     registrationform= RegistrationForm()
     return render_template("home.html",registrationform=registrationform, loginform=LoginForm())
 
-# If validated, register user with their email, hashes their password with salt
+""" Once user clicks register, system checks if information provided is correct; Checks if user already exists: gives error.
+    Otherwise, it gets a salt, creates a hash with salth, which it uses to create a new user with their email, salt, and hash.
+    If registration is successful, provides user with an affirmative message.
+"""
 
 @app.route("/register", methods=["POST"])
 def register():
@@ -57,13 +64,11 @@ def login():
         form.email.errors.append('Email or password invalid')
     return render_template('home.html', loginform=form, registrationform=RegistrationForm())
 
-
 @login_manager.user_loader
 def load_user(user_id):
     user_password = DB.get_user(user_id)
     if user_password:
         return User(user_id)
-
 
 @app.route('/launch')
 @login_required
@@ -71,19 +76,33 @@ def launch():
     cname = 'Pakland Chemicals'
     return render_template('launch.html')
     #Update Company Information
-
     # Create an Indent
-
-
-
     #View Past Indents
     return render_template('dash.html')
 
-@app.route('/create_company')
+@app.route('/company')
+@login_required
+def company():
+    return render_template('create-company.html', companyform=CompanyForm())
+
+@app.route('/create_company', methods=['POST'])
 @login_required
 def create_company():
-    #Create company code here
-    return
+    form = CompanyForm(request.form)
+    stored_user = DB.get_user(current_user.get_id())
+    if DB.get_company(stored_user[0]['id']):
+        data = DB.get_company(stored_user[0]['id'])
+        return render_template ('create-company.html', data = data, companyform=form)
+    elif form.validate():
+        DB.create_company(stored_user[0]['id'], form.company_name.data, form.address1.data, form.address2.data, form.phone.data, form.fax.data, form.email.data)
+        return render_template('launch.html', onloadmessage='Company Information Successfully Updated.')
+    return render_template('create-company.html', companyform=form)
+
+
+@app.route('/indent')
+@login_required
+def indent():
+    return render_template('create-indent.html', indent=IndentForm())
 
 @app.route('/create_indent')
 @login_required

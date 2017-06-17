@@ -3,11 +3,11 @@ import datetime
 import config
 
 import pymysql
-connect = pymysql.connect(host='localhost', user='root', password='Mc$pacejam101', db='indentify', autocommit=True, cursorclass=pymysql.cursors.DictCursor)
+connect = pymysql.connect(host='localhost', user=config.user, password=config.password, db=config.db, autocommit=True, cursorclass=pymysql.cursors.DictCursor)
 class DBHelper:
 
     def connect(self, database="indentify"):
-        return pymysql.connect(host='localhost', user=config.db_user, password=config.db_password, db=database, autocommit=True, cursorclass=pymysql.cursors.DictCursor)
+        return pymysql.connect(host='localhost', user=config.user, password=config.password, db=config.db, autocommit=True, cursorclass=pymysql.cursors.DictCursor)
 
     def create_user(self, email,salt, hashed):
         conn = self.connect()
@@ -33,16 +33,62 @@ class DBHelper:
         finally:
             conn.close()
 
-    def create_company():
-        return
-    def get_company():
-        return
 
-    def update_company():
-        return
+
+    def get_company(self, uid):
+        conn = self.connect()
+        try:
+            query = "SELECT * FROM company WHERE uid = %s;"
+            with conn.cursor() as cursor:
+                cursor.execute(query, uid)
+                return cursor.fetchall()
+        except Exception as e:
+            print(e)
+        finally:
+            conn.close
+
+    def create_company(self, uid, name, address1, email, address2='', phone='', fax=''):
+        conn = self.connect()
+        try:
+            query = "SELECT uid FROM company WHERE uid= %s;"
+            with conn.cursor() as cursor:
+                cursor.execute(query, uid)
+                results = cursor.fetchall()
+            if results:
+                try:
+                    query = "UPDATE company SET name = %s, address1 = %s, address2 = %s, phone = %s, fax = %s, email = %s\
+                    where uid = %s;"
+                    with conn.cursor() as cursor:
+                        cursor.execute(query, (name, address1, address2, phone, fax, email, uid))
+                except Exception as e:
+                    print(e)
+                finally:
+                    conn.close()
+            else:
+                try:
+                    query= "INSERT INTO company (uid, name, address1, address2, phone, fax, email)\
+                    VALUES (%s, %s, %s, %s, %s, %s, %s);"
+                    with conn.cursor() as cursor:
+                        cursor.execute(query, (uid, name, address1, address2, phone, fax, email))
+                except Exception as e:
+                    print(e)
+                finally:
+                    conn.close()
+        except Exception as e:
+            print(e)
+
 
     def create_indent():
+        conn = self.connect()
+        try:
+            query: "INSERT INTO indent (uid, )"
         return
+
+    def create_terms():
+        return
+
+    def get_terms():
+
 
     def get_indent():
         return

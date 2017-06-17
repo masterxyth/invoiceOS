@@ -1,8 +1,7 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block bodytag %}
 
-{% block bodytag %}
-<link href="../static/css/launch.css" rel="stylesheet">
-<body>
+<body {% if onloadmessage %} onload="alert('{{onloadmessage}}');" {% endif %}>
+  <link href="../static/css/launch.css" rel="stylesheet">
 
 
 <div class="jumbotron">
@@ -23,7 +22,7 @@
           <h4 class="card-title">Create Indent</h4>
           <h6 class="card-subtitle text-muted">Create a New Indent</h6>
         </div>
-        <a href="#" class="btn btn-default">Create</a>
+        <a href="/create_company" class="btn btn-default">Create</a>
       </div>
     </div>
 
@@ -34,7 +33,7 @@
           <h4 class="card-title">Update Company Info</h4>
           <h6 class="card-subtitle text-muted">Update Your Company Info</h6>
         </div>
-        <a href="#" class="btn btn-default">Update</a>
+        <a href="/company" class="btn btn-default">Update</a>
       </div>
     </div>
     <div class="col-md-4">
