@@ -1,0 +1,146 @@
+{% extends "base.html" %} {% block bodytag %}
+
+<body {% if onloadmessage %} onload="alert('{{onloadmessage}}');" {% endif %}>
+  <link href="../static/css/launch.css" rel="stylesheet">
+
+  {% endblock %}
+
+  {% block content %}
+  <div class="jumbotron">
+      <div class="container">
+          <h1>Create an Indent</h1>
+          <h4 id='sub-heading'><em>Create an Indent for {% if cname %} {{cname}} {% else %} your Business {% endif %}</em></h4>
+      </div>
+    </div>
+
+    <form class='navbar-form navbar-right form-inline' action='/create_indent' method="POST">
+{% if indentform.errors %}
+<ul class="errors">
+  {% for field_name, field_errors in indentform.errors|dictsort if field_errors %}
+    {% for error in field_errors %}
+    <li>
+      {{ field_name }}: {{error }}
+    </li>
+    {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}
+<h3 id="buyer-heading">Buyer Information Section</h3>
+<hr />
+  {{ indentform.csrf_token }}
+  <div class="form-group ">
+    <label>Buyer's Name</label>
+    {{ indentform.buyer_name(class='form-control', placeholder="Buyer's Name")}}
+  </div>
+  <div class="form-group ">
+    <label>Address Line 1</label>
+    {{ indentform.buyer_address1(class='form-control', placeholder="Address Line 1")}}
+  </div>
+  <div class="form-group ">
+    <label>Address Line 2</label>
+    {{ indentform.buyer_address2(class='form-control', placeholder="Address Line 2")}}
+  </div>
+  <div class="form-group ">
+    <label>City</label>
+    {{ indentform.buyer_city(class='form-control', placeholder="City")}}
+  </div>
+  <div class="form-group ">
+    <label>Country</label>
+    {{ indentform.buyer_country(class='form-control', placeholder="Country")}}
+  </div>
+<hr />
+  <h3 id="seller-heading">Seller Information Section</h3>
+  <hr />
+    <div class="form-group ">
+      <label>Seller's Name</label>
+      {{ indentform.seller_name(class='form-control', placeholder="Seller's Name")}}
+    </div>
+    <div class="form-group ">
+      <label>Address Line 1</label>
+      {{ indentform.seller_address1(class='form-control', placeholder="Address Line 1")}}
+    </div>
+    <div class="form-group ">
+      <label>Address Line 2</label>
+      {{ indentform.seller_address2(class='form-control', placeholder="Address Line 2")}}
+    </div>
+    <div class="form-group ">
+      <label>City</label>
+      {{ indentform.seller_city(class='form-control', placeholder="City")}}
+    </div>
+    <div class="form-group ">
+      <label>Country</label>
+      {{ indentform.seller_country(class='form-control', placeholder="Country")}}
+    </div>
+<hr />
+    <h3 id="product-heading">Product Information Section</h3>
+    <hr />
+      {{ indentform.csrf_token }}
+      <div class="form-group ">
+        <label>Product's Name</label>
+        {{ indentform.product_name(class='form-control', placeholder="Product's Name")}}
+      </div>
+      <div class="form-group ">
+        <label>Quantity</label>
+        {{ indentform.product_qty(class='form-control', placeholder="Quantity")}}
+      </div>
+      <div class="form-group ">
+        <label>Unit</label>
+        {{ indentform.unit(class='form-control', placeholder="KG or Metric Ton")}}
+      </div>
+      <div class="form-group ">
+        <label>Price</label>
+        {{ indentform.price(class='form-control', placeholder="Price")}}
+      </div>
+
+      <div class="form-group ">
+        <label>Packaging</label>
+        {{ indentform.pkg(class='form-control', placeholder="Packaging")}}
+      </div>
+
+      <div class="form-group ">
+        <label>Origin</label>
+        {{ indentform.origin(class='form-control', placeholder="Origin")}}
+      </div>
+
+      <div class="form-group ">
+        <label>Load</label>
+        {{ indentform.load(class='form-control', placeholder="40FT/20FT FCL/LCL")}}
+      </div>
+<hr />
+<h3 id='term-heading'>Terms</h3>
+<hr />
+<div class="form-group ">
+  <label>Payment</label>
+  {{ indentform.payment_type(class='form-control', placeholder="Payment Type")}}
+</div>
+
+<div class="form-group ">
+  <label>Port of Shipment</label>
+  {{ indentform.shipment_port(class='form-control', placeholder="Port of Shipment")}}
+</div>
+
+<div class="form-group ">
+  <label>Bank Routing Informaton</label>
+  {{ indentform.bank_detail(class='form-control', placeholder="Bank Info")}}
+</div>
+
+<div class="form-group ">
+  <label>Days at Port</label>
+  {{ indentform.days_at_port(class='form-control', placeholder="Number of Days at Port")}}
+</div>
+
+<div class="form-group ">
+  <label>Insurance Provided By</label>
+  {{ indentform.insurance_by(class='form-control', placeholder="Buyer, Seller, or None")}}
+
+</div>
+<hr />
+  <div class="form-group ">
+    {{ indentform.submit(class="btn btn-primary btn-block") }}
+  </div>
+</form>
+  </div>
+
+</div>
+
+{% endblock %}

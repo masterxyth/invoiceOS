@@ -29,7 +29,7 @@ try:
         FOREIGN KEY (cid) REFERENCES indentify.company(id));"""
         cursor.execute(sql)
 
-        sql= """CREATE TABLE IF NOT EXISTS indentify.invoice (id INT NOT NULL AUTO_INCREMENT,
+        sql= """CREATE TABLE IF NOT EXISTS indentify.indent (id INT NOT NULL AUTO_INCREMENT,
         uid INT NOT NULL,
         create_date DATETIME,
         last_update TIMESTAMP,
@@ -43,7 +43,7 @@ try:
         iid INT NOT NULL,
         term VARCHAR(255),
         PRIMARY KEY (id),
-        FOREIGN KEY (iid) REFERENCES indentify.invoice(id));"""
+        FOREIGN KEY (iid) REFERENCES indentify.indent(id));"""
         cursor.execute(sql)
 
         sql = """CREATE TABLE IF NOT EXISTS indentify.line_item (id INT NOT NULL AUTO_INCREMENT,
@@ -55,7 +55,7 @@ try:
         comission NUMERIC(15,2),
         load VARCHAR(10),
         PRIMARY KEY (id),
-        FOREIGN KEY (iid) REFERENCES indentify.invoice(id),
+        FOREIGN KEY (iid) REFERENCES indentify.indent(id),
         FOREIGN KEY(pid) REFERENCES indentify.product(id));"""
         cursor.execute(sql)
 

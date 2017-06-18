@@ -78,10 +78,10 @@ class DBHelper:
             print(e)
 
 
-    def create_indent():
+"""    def create_indent(self, uid, create_date, last_update, status, type):
         conn = self.connect()
         try:
-            query: "INSERT INTO indent (uid, )"
+            query= "INSERT INTO indent (uid, create_date, last_update, status, type )"
         return
 
     def create_terms():
@@ -95,3 +95,4 @@ class DBHelper:
 
     def update_indent():
         return
+"""

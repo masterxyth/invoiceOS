@@ -50,3 +50,4 @@ class IndentForm(FlaskForm):
     bank_detail = StringField('Bank Routing Detail', validators=[validators.InputRequired()])
     days_at_port = StringField('Days at Port', validators=[validators.InputRequired()])
     insurance_by = StringField('Insurance Provided By', validators=[validators.InputRequired()])
+    submit = SubmitField('submit', [validators.DataRequired()])

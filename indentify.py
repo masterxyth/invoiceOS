@@ -102,12 +102,11 @@ def create_company():
 @app.route('/indent')
 @login_required
 def indent():
-    return render_template('create-indent.html', indent=IndentForm())
+    return render_template('create-indent.html', indentform=IndentForm())
 
 @app.route('/create_indent')
 @login_required
 def create_indent():
-    #Indent code here
     return
 
 @app.route('/generate')
