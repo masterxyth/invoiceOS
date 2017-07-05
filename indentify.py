@@ -24,7 +24,7 @@ DB = DBHelper()
 PH = PasswordHelper()
 
 app = Flask(__name__)
-app.secret_key = 'S/EgFas2Cfk/BPlHVTTpYZV4vH/qN3o4Zn/h0AKE57jyE9/3dtUJJqIBBGWZhq1A+Dh8fwI7qX0cTuAp1XRc9pb/6g+xoi/zlImH'
+app.secret_key = ''
 login_manager = LoginManager(app)
 login_manager.init_app(app)
 
